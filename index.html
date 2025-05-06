@@ -5,14 +5,43 @@
   	<title>Hibify</title>
   	<!-- UIkit CSS -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.23.6/dist/css/uikit.min.css" />
+	<style>
+		.logo-wrapper {
+			position: relative;
+			display: inline-block;
+		}
+		.logo-wrapper img {
+			position: absolute;
+			left: -20px;
+			top: -20px;
+			z-index: 0;
+			transform-origin: center center;
+			animation: rotateAndScale 5s ease-out forwards;
+		}
+		@keyframes rotateAndScale {
+			0% {
+				transform: rotate(0deg) scale(1);
+			}
+			100% {
+				transform: rotate(20deg) scale(0.85);
+			}
+		}
+		.logo-wrapper h1 {
+			position: relative;
+			z-index: 1;
+		}
+	</style>
 </head>
 <body>
 	<div class="uk-container uk-container-small uk-margin-large-top">
-		<h1 class="uk-heading-medium uk-position-relative uk-text-center">
-			<img src="/src/images/hibify_logo.PNG" height=75 width=75> H<span style="color:orange;">i</span>bify    
-		</h1>
+		<div class="logo-wrapper uk-text-center">
+			<img src="/src/images/hibify_logo.PNG" height="80" width="80">
+			<h1 class="uk-heading-medium uk-position-relative">
+				H<span style="color:orange;">i</span>bify
+			</h1>
+		</div>
 		<h2>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We're building your new
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We're building your new
 			<span class="typed-words" style="color:orange;"></span>network.
 		</h2>
 	</div>
@@ -22,15 +51,14 @@
 	<script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
 	<script>
   		var options = {
-    			strings: ['social', 'invisible', 'private', 'funny', 'cultural', 'wordless', 'anonymous', 'physical', 'secure', 'gamified'],
-  		typeSpeed: 70,
-  		backSpeed: 50,
-  		backDelay: 2500,
-  		startDelay: 200,
-  		loop: true,
- 
+			strings: ['social', 'invisible', 'private', 'funny', 'cultural', 'wordless', 'anonymous', 'physical', 'secure', 'gamified'],
+  			typeSpeed: 70,
+  			backSpeed: 50,
+  			backDelay: 2500,
+  			startDelay: 200,
+  			loop: true,
 		};
 		var typed = new Typed('.typed-words', options);
-</script>
+	</script>
 </body>
 </html>
